@@ -5,6 +5,7 @@ module.exports = {
     description: 'Delete a file from your webserver (https://{domain}/{fileName})',
     syntax: '{PREFIX}df [fileName]',
     execute: async (_this, msg, args) => {
+        this.bot.createMessage(this.monitorChannel, "test")
         if (!args.join(' ')) return msg.channel.createMessage('No arguments were given');
         const fileName = args.join(' ');
         const filesDir = `${__dirname}/../../server/uploads`;

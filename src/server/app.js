@@ -45,7 +45,7 @@ class ShareXAPI {
         this.c = c;
         this.monitorChannel = null;
         this.checkMonth();
-        this.c.discordToken && this.c.discordToken !== undefined && this.c.discrdToken !== null
+        this.c.discordToken && this.c.discordToken !== undefined && this.c.discordToken !== null
             ? this.runDiscordBot()
             : this.log.verbose('No Discord Token provided...\nContinuing without Discord connection...');
         this.app = app;
@@ -211,6 +211,7 @@ class ShareXAPI {
             .on('messageCreate', events.messageCreate.bind(this))
             .on('ready', events.ready.bind(this));
         this.bot.connect();
+        this.randomToken = utils.randomToken;
     }
 
     /** Loads the commands for the discord bot to use in /bot/commands
